@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -55,6 +56,9 @@ public class GetStartedPageTest {
             }
             else if (prop.getProperty("browser").equalsIgnoreCase("chrome")){
                 driver = new ChromeDriver();
+            }
+            else if (prop.getProperty("browser").equalsIgnoreCase("edge")){
+                driver = new EdgeDriver();
             }
             else if (prop.getProperty("browser") ==null || prop.getProperty("browser").equals("")){
                 driver = new FirefoxDriver();
